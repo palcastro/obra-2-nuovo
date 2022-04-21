@@ -31,20 +31,20 @@ echo $buffer;
 
   <!-- Contido principal -->
   <div class="container">
-  <div class="p-4 m-2 text-primary">
-    <h2 class="display-6">Benvid@ ao Servizo de Orientación Laboral</h2>
+  <div class="p-3 m-1 text-primary">
+    <h2 class="display-7 text-center">Benvid@ ao Servizo de Orientación Laboral</h2>
   </div>
-<div class="card mb-3">
+<div class="card mb-2">
   <div class="row g-0">
-    <div class="col-md-8" style="background: center center url(./assets/img/cies.jpg); min-height: 35vh;" >
+    <div class="col-md-6" style="background: center center url(./assets/img/cies.jpg); min-height: 40vh; " >
     </div>
     <div class="col-md-4">
-      <div class="card-body align-middle"
+      <div class="card-body align-middle p-5 mx-5"
         <!-- enlaces a outros servizos -->
         <ul class="list-unstyled list-group mt-lg-3">
           <li class="list-group-item mb-2 border-0 text-nowrap lead inicio"><a class="mb-6 px-2 py-3 w-100 text-decoration-none" href="https://sede.vigo.org/portal-empregado/#/gestionLogin" target="_blank">
           <img class="bi m-1" height="32" src="./assets/img/portal.png" alt="Portal do empregado">
-              Portal do empregado</a>
+              Portal do emprego</a>
             </li>
           <li class="list-group-item mb-2 border-0 text-nowrap lead inicio"><a class="mb-6 px-2 py-3 w-100 text-decoration-none" href="https://correo.vigo.org/zimbra/" target="_blank">
           <img class="bi m-1" height="32" src="./assets/img/zimbra.png"  alt="Zimbra">
