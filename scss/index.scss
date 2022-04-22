@@ -153,16 +153,19 @@ h2 {
   padding-bottom: 2%;
   z-index: 5;
 }
+
 .container-fluid02 {
   z-index: 5;
   width: 100%;
   padding: 1%;
 }
+
 // ICONO HAMBURGUESA
 .navbar-dark .navbar-toggler {
   border: 0;
   float: right;
 }
+
 // ----------------------------------------- CIERRE MENÚ HAMBURGUESA--------------------------------------------------------
 
 
@@ -277,13 +280,14 @@ t-tab y t-content = elementos li -> NECESARIOS PARA EL JS */
   .nav-link.active,
   .nav-item.show .nav-link {
     color: $nav-tabs-link-active-color;
-    background-color: rgba(86,148,219,0.6);
+    background-color: rgba(86, 148, 219, 0.6);
     border-color: $nav-tabs-link-active-border-color;
   }
 }
 
-.tab-content>.tab-pane.active{
-  background-color: rgba(86,148,219,0.3);}
+.tab-content>.tab-pane.active {
+  background-color: rgba(86, 148, 219, 0.3);
+}
 
 
 

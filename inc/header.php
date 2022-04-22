@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex p-1">
   <div class="container-fluid02">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

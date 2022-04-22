@@ -27,50 +27,6 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
   <!--Tabla datos-->
   <main>
 
-    <!-- NUESTRAS TABS -->
-
-    <!-- <div class="container d-flex justify-content-center">
-  <table class="table table-striped table-hover m-5">
-    <thead>
-    <tr>
-      <th>REXISTRO DE PERSOA CON ID <?php echo $row['id']; ?></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th>Nome e apelidos:</th>
-      <td><?php echo $row['nome'], "&nbsp", $row['primeiro_apelido'], "&nbsp", $row['segundo_apelido'] ?></td>
-    </tr>
-    <tr>
-      <th>DNI/NIF:</th>
-      <td><?php echo $row['nif']; ?></td>
-    </tr>
-    <tr>
-      <th>Data de nacemento:</th>
-      <td><?php echo $row['data_nacemento']; ?></td>
-    </tr>
-    <tr>
-      <th>Sexo:</th>
-      <td> <?php echo $row['sexo']; ?></td>
-    </tr>
-    <tr>
-      <th>Código Postal:</th>
-      <td><?php echo $row['codigo_postal']; ?></td>
-    </tr>
-    <tr>
-      <th>Teléfono:</th>
-      <td><?php echo $row['telefono']; ?></td>
-    </tr>
-    <tr>
-      <th>Email:</th>
-      <td><?php echo $row['email']; ?></td>
-    </tr>
-    </tbody>
-  </table>
-  </div> -->
-
-
-
 
     <!-- TABS CON BOOTSTRAP -->
     <div class="container-fluid px-md-5 my-5">
@@ -119,158 +75,178 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
               </div>
             </div>
 
-            <hr>
             <!-- ***********************DATOS PERSOAIS************************  -->
             <div class="row align-items-start my-3">
               <p class="lead text-uppercase opacity-50">Accións</p>
               <div class="col">
-                <p class="text-nowrap"><span class="opacity-50">DATA DA 1ª ENTREVISTA:</span> <?php // echo $row['data_p_cita']; 
+                <p class="text-nowrap"><span class="opacity-50">DATA DA 1ª ENTREVISTA:</span> <?php // echo $row['data_p_cita'];
                                                                                               ?>
-                <p class="text-nowrap"><span class="opacity-50">ORIENTADOR/A:</span> <?php // echo $row['orientador_p_cita']; 
+                <p class="text-nowrap"><span class="opacity-50">ORIENTADOR/A:</span> <?php // echo $row['orientador_p_cita'];
                                                                                       ?>
-                <p class="text-nowrap"><span class="opacity-50">CANLE DE ACCESO:</span> <?php // echo $row['orientador_p_cita']; 
+                <p class="text-nowrap"><span class="opacity-50">CANLE DE ACCESO:</span> <?php // echo $row['orientador_p_cita'];
                                                                                         ?>
               </div>
               <div class="col">
-                <p class="text-nowrap"><span class="opacity-50">SEGUIMENTO:</span> <?php // echo $row['orientador_p_cita']; 
+                <p class="text-nowrap"><span class="opacity-50">SEGUIMENTO:</span> <?php // echo $row['orientador_p_cita'];
                                                                                     ?>
-                <p class="text-nowrap"><span class="opacity-50">ACCIÓNS DO SOL:</span> <?php // echo $row['orientador_p_cita']; 
+                <p class="text-nowrap"><span class="opacity-50">ACCIÓNS DO SOL:</span> <?php // echo $row['orientador_p_cita'];
                                                                                         ?>
-                <p class="text-nowrap"><span class="opacity-50">NOTAS E CONSIDERACIÓNS</span> <?php // echo $row['orientador_p_cita']; 
+                <p class="text-nowrap"><span class="opacity-50">NOTAS E CONSIDERACIÓNS</span> <?php // echo $row['orientador_p_cita'];
                                                                                               ?>
               </div>
             </div>
+            <div class="my-4">
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="index.php" class="btn btn-primary">VOLVER</a>
+            </div>
+          </div>
+          </div>
+
+        </div>
+
+        <!-- Formación -->
+        <div class="tab-pane fade py-3 px-4" id="formacion" role="tabpanel" aria-labelledby="formacion-tab">
+          <div class="d-flex flex-wrap">
+            <div class="col-md-4 my-2">
+              <label for="estudo" class="control-label">ESTUDOS BÁSICOS:</label>
+              <div class="col-md-10">
+                <select class="form-control" id="estudos" name="estudos">
+                  <option value="text" disabled selected hidden>Formación Básica</option>
+                  <option value="ESO">E.S.O</option>
+                  <option value="COU">C.O.U</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-4 my-2">
+              <label for="superiores" class="control-label">ESTUDOS SUPERIORES:</label>
+              <div class="col-md-10">
+                <select class="form-control" id="superiores" name="superiores">
+                  <option value="text" disabled selected hidden>Formación Superior</option>
+                  <option value="uni">Universitarios</option>
+                  <option value="nouni">Non Universitarios</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-4 my-2">
+              <label for="universitarios" class="control-label">UNIVERSITARIOS:</label>
+              <div class="col-md-10">
+                <select class="form-control" id="universitarios" name="universitarios">
+                  <option value="text" disabled selected hidden>Estudos Universitarios</option>
+                  <option value="grao">Grao</option>
+                  <option value="master">Master</option>
+                  <option value="master">Doutorado</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-4 my-2">
+              <label for="non-universitarios" class="control-label">NON UNIVERSITARIOS: </label>
+              <div class="col-md-10">
+                <select class="form-control" id="non-universitarios" name="nonuniversitarios">
+                  <option value="text" disabled selected hidden>Outros</option>
+                  <option value="bacharelato">Bacharelato</option>
+                  <option value="formacion-profesional">Formación Profesional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-4 my-2">
+              <label for="fp" class="control-label">FORMACIÓN PROFESIONAL:</label>
+              <div class="col-md-10">
+                <select class="form-control" id="formacion" name="formacion">
+                  <option value="text" disabled selected hidden>Formación Profesional</option>
+                  <option value="superior">Superior</option>
+                  <option value="media">Media</option>
+                  <option value="basica">Básica</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-4 my-2">
+              <label for="familias" class="control-label">FAMILIAS PROFESIONAIS:</label>
+              <div class="col-md-10">
+                <select class="form-control" id="familias" name="familias">
+                  <option value="text" disabled selected hidden>Familias profesionais</option>
+                  <option value="informatica">Informática e comunicacións</option>
+                  <option value="admin">Administración e Xestión</option>
+                  <option value="madeira">Madeira, moble e corcho</option>
+                  <option value="auga">Enerxía e auga</option>
+                  <option value="imaxe">Imaxe persoal</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-4 my-2">
+              <label for="complementaria" class="control-label">FORMACIÓN COMPLEMENTARIA:</label>
+              <div class="col-md-10">
+                <select class="form-control" id="complementaria" name="complementaria">
+                  <option value="text" disabled selected hidden>Formación Complementaria</option>
+                  <option value="certificados">Certificados Oficiais</option>
+                  <option value="curso">Curso Manipulador de Alimentos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-4 my-2">
+              <label for="idiomas" class="control-label">IDIOMAS:</label>
+              <div class="col-md-10">
+                <select class="form-control" id="idiomas" name="idiomas">
+                  <option label="Niveis">
+                  <option value="text" disabled selected hidden>Niveis</option>
+                  <option value="B1">B1</option>
+                  <option value="B2">B2</option>
+                  </option>
+                </select>
+
+                <select class="form-control" id="idiomas" name="idiomas">
+                  <option label="Curso">
+                  <option value="text" disabled selected hidden>Certificación</option>
+                  <option value="text">Cambridge</option>
+                  <option value="text">Oxford</option>
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-4 my-2">
+              <label for="otros" class="control-label">OUTROS:</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkbox1">
+                <label class="form-check-label" for="defaultCheck">Viviu no estranxeiro</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkbox2">
+                <label class="form-check-label" for="defaultCheck">Homologado</label>
+                <!-- <label>Homologado</label> -->
+                <!-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"> Si
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2"> Non -->
+              </div>
+            </div>
+            <div class="form-group col-md-4 my-2">
+              <label for="exampleFormControlTextarea">NOTAS E CONSIDERACIÓNS:</label>
+              <textarea class="form-control" id="exampleFormControlTextarea" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="my-4">
+          <div class="col-sm-offset-2 col-sm-10">
+            <a href="index.php" class="btn btn-primary">VOLVER</a>
           </div>
         </div>
-        <!-- Formación -->
-        <div class="tab-pane fade py-3 px-4" id="formacion" role="tabpanel" aria-labelledby="formacion-tab">   
-          <div class="d-flex flex-wrap">
-        <div class="col-md-4">
-            <label for="estudo" class="control-label">ESTUDOS BÁSICOS:</label>
-            <div class="col-md-10">
-              <select class="form-control" id="estudos" name="estudos">
-                <option value="text" disabled selected hidden>Formación Básica</option>
-                <option value="ESO">E.S.O</option>
-                <option value="COU">C.O.U</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="superiores" class="control-label">ESTUDOS SUPERIORES:</label>
-            <div class="col-md-10">
-              <select class="form-control" id="superiores" name="superiores">
-                <option value="text" disabled selected hidden>Formación Superior</option>
-                <option value="uni">Universitarios</option>
-                <option value="nouni">Non Universitarios</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="universitarios" class="control-label">UNIVERSITARIOS:</label>
-            <div class="col-md-10">
-              <select class="form-control" id="universitarios" name="universitarios">
-                <option value="text" disabled selected hidden>Estudos Universitarios</option>
-                <option value="grao">Grao</option>
-                <option value="master">Master</option>
-                <option value="master">Doutorado</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="non-universitarios" class="control-label">NON UNIVERSITARIOS: </label>
-            <div class="col-md-10">
-              <select class="form-control" id="non-universitarios" name="nonuniversitarios">
-                <option value="text" disabled selected hidden>Outros</option>
-                <option value="bacharelato">Bacharelato</option>
-                <option value="formacion-profesional">Formación Profesional</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="fp" class="control-label">FORMACIÓN PROFESIONAL:</label>
-            <div class="col-md-10">
-              <select class="form-control" id="formacion" name="formacion">
-                <option value="text" disabled selected hidden>Formación Profesional</option>
-                <option value="superior">Superior</option>
-                <option value="media">Media</option>
-                <option value="basica">Básica</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="familias" class="control-label">FAMILIAS PROFESIONAIS:</label>
-            <div class="col-md-10">
-              <select class="form-control" id="familias" name="familias">
-                <option value="text" disabled selected hidden>Familias profesionais</option>
-                <option value="informatica">Informática e comunicacións</option>
-                <option value="admin">Administración e Xestión</option>
-                <option value="madeira">Madeira, moble e corcho</option>
-                <option value="auga">Enerxía e auga</option>
-                <option value="imaxe">Imaxe persoal</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="complementaria" class="control-label">FORMACIÓN COMPLEMENTARIA:</label>
-            <div class="col-md-10">
-              <select class="form-control" id="complementaria" name="complementaria">
-                <option value="text" disabled selected hidden>Formación Complementaria</option>
-                <option value="certificados">Certificados Oficiais</option>
-                <option value="curso">Curso Manipulador de Alimentos</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="idiomas" class="control-label">IDIOMAS:</label>
-            <div class="col-md-10"></div>
-            <select class="form-control" id="idiomas" name="idiomas">
-              <optgroup label="Niveis">
-                <option value="text" disabled selected hidden>Niveis</option>
-                <option value="B1">B1</option>
-                <option value="B2">B2</option>
-              </optgroup>
-            </select>
-
-            <select class="form-control" id="idiomas" name="idiomas">
-              <optgroup label="Curso">
-                <option value="text" disabled selected hidden>Certificación</option>
-                <option value="text">Cambridge</option>
-                <option value="text">Oxford</option>
-              </optgroup>
-            </select>
-          </div>
-
-          <div class="col-md-4">
-            <label for="otros" class="control-label">OUTROS:</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="checkbox1">
-              <label class="form-check-label" for="defaultCheck">Viviu no estranxeiro</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="checkbox2">
-              <label class="form-check-label" for="defaultCheck">Homologado</label>
-              <!-- <label>Homologado</label> -->
-              <!-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"> Si
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2"> Non -->
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea">NOTAS E CONSIDERACIÓNS:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea" rows="3"></textarea>
-          </div>
-          </div>
         </div><!-- end tab formacion -->
 
-        <!-- Experiencia -->
 
-        <div class="tab-pane fade py-3 px-4" id="experiencia" role="tabpanel" aria-labelledby="experiencia-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, debitis rerum quod eligendi minima impedit provident magnam distinctio omnis. Ullam ducimus nobis architecto dolorum officiis cupiditate veniam nihil molestiae iusto.</div>
+        <!-- Experiencia -->
+        <div class="tab-pane fade py-3 px-4" id="experiencia" role="tabpanel" aria-labelledby="experiencia-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, debitis rerum quod eligendi minima impedit provident magnam distinctio omnis. Ullam ducimus nobis architecto dolorum officiis cupiditate veniam nihil molestiae iusto.
+        <div class="my-4">
+          <div class="col-sm-offset-2 col-sm-10">
+            <a href="index.php" class="btn btn-primary">VOLVER</a>
+
+          </div>
+        </div>
+
+        </div>
         <div class="tab-pane fade py-3 px-4" id="ofertas" role="tabpanel" aria-labelledby="ofertas-tab">
           <!--form class="row g-3 mt-4" method="POST" action="update.php" autocomplete="off">
         <div class="col-md-4">
@@ -333,9 +309,13 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
                   <a href="#" class="link-btn">Ver oferta</a>
                 </div>
               </div>
-
-            </div> <!-- class row end -->
-          </div> <!-- class container end -->
+            </div>
+          </div>
+          <div class="my-4">
+          <div class="col-sm-offset-2 col-sm-10">
+            <a href="index.php" class="btn btn-primary">VOLVER</a>
+          </div>
+        </div>
         </div>
       </div>
     </div>
