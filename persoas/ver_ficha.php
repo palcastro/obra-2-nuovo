@@ -96,12 +96,13 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
                                                                                               ?>
               </div>
             </div>
-          </div>
-          <div class="my-4">
+            <div class="my-4">
             <div class="col-sm-offset-2 col-sm-10">
               <a href="index.php" class="btn btn-primary">VOLVER</a>
             </div>
           </div>
+          </div>
+
         </div>
 
         <!-- FORMACIÓN -->
@@ -264,12 +265,13 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
                 </div>
               </div>
             </div>
-          </div>
-          <div class="my-4">
+            <div class="my-4">
             <div class="col-sm-offset-2 col-sm-10">
               <a href="index.php" class="btn btn-primary">VOLVER</a>
             </div>
           </div>
+          </div>
+
         </div>
       </div>
     </div>
