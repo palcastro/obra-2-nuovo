@@ -1,2 +1,2 @@
-<!-- en index de citas se debería cambiar el formato de la tabla por el que se tiene en persoas y empresas,
-y organizar la estructura con las notas en plan grid o flex. Ahí ya se añadiría la funcionalidad de eliminar -->
+<!--No Index de citas deberiamos cambiar o formato da táboa polo que ten en persoas e empresas, e organizar a estrutura
+coas notas en grid ou flex. Despois engadiríamos a funcionalidade de eliminar -->

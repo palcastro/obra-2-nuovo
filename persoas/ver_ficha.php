@@ -2,7 +2,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// Menú y script title que toma el header.
+// HEADER
 ob_start();
 include_once '../inc/header.php';
 
@@ -24,14 +24,14 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
 <html>
 
 <body>
-  <!--Tabla datos-->
+  <!--TÁBOA DATOS-->
   <main>
 
 
     <!-- TABS CON BOOTSTRAP -->
     <div class="container-fluid px-md-5 my-5">
       <!-- TABS -->
-      <!-- tabs menu -->
+      <!-- TABS MENÚ-->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item w-auto" role="presentation">
           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#datospersoais" type="button" role="tab" aria-controls="home" aria-selected="true">Datos persoais</button>
@@ -46,10 +46,12 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
           <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#ofertas" type="button" role="tab" aria-controls="contact" aria-selected="false">Ofertas</button>
         </li>
       </ul>
-      <!-- contidos tabs -->
+
+
+      <!-- CONTIDOS TABS -->
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade py-3 px-4 show active" id="datospersoais" role="tabpanel" aria-labelledby="datospersoais-tab">
-          <!-- Datos persoais -->
+          <!-- DATOS PERSOAIS -->
           <div class="container">
             <div class="row align-items-start my-3">
               <div class="col p-2 me-lg-4 bd-highlight text-start">
@@ -75,7 +77,6 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
               </div>
             </div>
 
-            <!-- ***********************DATOS PERSOAIS************************  -->
             <div class="row align-items-start my-3">
               <p class="lead text-uppercase opacity-50">Accións</p>
               <div class="col">
@@ -95,16 +96,15 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
                                                                                               ?>
               </div>
             </div>
-            <div class="my-4">
+          </div>
+          <div class="my-4">
             <div class="col-sm-offset-2 col-sm-10">
               <a href="index.php" class="btn btn-primary">VOLVER</a>
             </div>
           </div>
-          </div>
-
         </div>
 
-        <!-- Formación -->
+        <!-- FORMACIÓN -->
         <div class="tab-pane fade py-3 px-4" id="formacion" role="tabpanel" aria-labelledby="formacion-tab">
           <div class="d-flex flex-wrap">
             <div class="col-md-4 my-2">
@@ -230,77 +230,31 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
             </div>
           </div>
           <div class="my-4">
-          <div class="col-sm-offset-2 col-sm-10">
-            <a href="index.php" class="btn btn-primary">VOLVER</a>
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="index.php" class="btn btn-primary">VOLVER</a>
+            </div>
           </div>
-        </div>
         </div><!-- end tab formacion -->
 
 
-        <!-- Experiencia -->
+        <!-- EXPERIENCIA -->
         <div class="tab-pane fade py-3 px-4" id="experiencia" role="tabpanel" aria-labelledby="experiencia-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, debitis rerum quod eligendi minima impedit provident magnam distinctio omnis. Ullam ducimus nobis architecto dolorum officiis cupiditate veniam nihil molestiae iusto.
-        <div class="my-4">
-          <div class="col-sm-offset-2 col-sm-10">
-            <a href="index.php" class="btn btn-primary">VOLVER</a>
+          <div class="my-4">
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="index.php" class="btn btn-primary">VOLVER</a>
 
+            </div>
           </div>
-        </div>
 
         </div>
+
+        <!-- OFERTAS -->
         <div class="tab-pane fade py-3 px-4" id="ofertas" role="tabpanel" aria-labelledby="ofertas-tab">
-          <!--form class="row g-3 mt-4" method="POST" action="update.php" autocomplete="off">
-        <div class="col-md-4">
-          <label for="ofertade" class="control-label">TIPO DE OFERTA:</label>
-          <div class="col-sm-10">
-            <select class="form-control" id="ofertade" name="ofertade">
-              <option disabled selected>Elixe</option>
-              <option value="contratacion">Contratación</option>
-              <option value="formacion">Formación</option>
-              <option value="axuda">Axuda á contratación</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <label for="ofertaemp" class="control-label">EMPRESA:</label>
-          <div class="col-sm-10">
-            <input type="text" placeholder="Empresa" class="form-control" id="ofertaemp" name="ofertaemp">
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <label for="ofertapost" class="control-label">POSTO:</label>
-          <div class="col-sm-10">
-            <input type="text" placeholder="Posto" class="form-control" id="ofertapost" name="ofertapost">
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <label for="ofertanum" class="control-label">Nº DE OFERTAS:</label>
-          <div class="col-sm-10">
-            <input type="tel" class="form-control" id="ofertanum" name="ofertanum">
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <label for="ofertadata" class="control-label">DATA DA OFERTA:</label>
-          <div class="col-sm-10">
-            <input type="date" class="form-control" id="ofertadata" name="ofertadata">
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <label for="ofertadata" class="control-label">FIN DA OFERTA:</label>
-          <div class="col-sm-10">
-            <input type="date" class="form-control" id="ofertadata" name="ofertadata">
-          </div>
-        </div -->
-
 
           <div class="container section">
             <div class="row">
               <div class="col-md-3">
-                <!-- card #1 -->
+                <!-- CARD #1 -->
                 <div class="card py-3 px-2">
                   <h4 class="h5 card-title">TIPO DE OFERTA: <span> Contratación</span></h4>
                   <p class="card-text m-0">EMPRESA: <span>A quesexa</span></p>
@@ -312,10 +266,10 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
             </div>
           </div>
           <div class="my-4">
-          <div class="col-sm-offset-2 col-sm-10">
-            <a href="index.php" class="btn btn-primary">VOLVER</a>
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="index.php" class="btn btn-primary">VOLVER</a>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
@@ -326,7 +280,7 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
 
   </main>
 
-  <!--Footer php-->
+  <!--COMPOÑENTE FOOTER-->
   <?php
   include_once '../inc/footer.php';
   ?>

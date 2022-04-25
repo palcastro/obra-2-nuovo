@@ -25,7 +25,7 @@ $resultado = $mysqli->query($sql);
 <link rel="stylesheet" href="../../assets/css/index.css">
   <title>Modificar rexistro</title>
 </head>
-<!-- Caja mensaje -->
+<!-- CAIXA MENSAXE -->
 <body>
   <div class="modal modal-sheet d-block bg-light d-flex align-items-center" tabindex="-1" role="dialog" id="modalSheet">
     <div class="modal-dialog" role="document">

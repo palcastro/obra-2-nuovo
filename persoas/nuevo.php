@@ -2,7 +2,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// Menú y script title que toma el header.
+// HEADER
 ob_start();
 include_once '../inc/header.php';
 
@@ -17,13 +17,14 @@ echo $buffer;
 <html>
 
 <body>
-  <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
-  <h2 class="my-4 text-center text-primary">Novo rexistro de persoa</h2>
+  <!-- ESTRUTURA PARA TER VARIAS FICHAS DINÁMICAS NUNHA MESMA PÁXINA -->
 
   <!-- TABS CON BOOTSTRAP -->
-  <div class="container-fluid px-md-5 my-5">
+  <div class="container-fluid px-md-5 my-4">
+
+  <h4 class="mb-4 text-primary text-center"><b>NOVO REXISTRO DE PERSOA</b></h4>
     <!-- TABS -->
-    <!-- tabs menu -->
+    <!-- TABS MENÚ -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item w-auto" role="presentation">
         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#datospersoais" type="button" role="tab" aria-controls="home" aria-selected="true">Datos persoais</button>
@@ -39,11 +40,16 @@ echo $buffer;
       </li>
     </ul>
 
-    <!-- contidos tabs-->
+    <!-- CONTIDOS TABS-->
+
     <div class="tab-content" id="myTabContent">
+
+
       <div class="tab-pane fade py-3 px-4 show active" id="datospersoais" role="tabpanel" aria-labelledby="datospersoais-tab">
-        <!-- Datos persoais -->
+        <!-- DATOS PERSOAIS -->
         <div class="container">
+        <form class="row g-3 mt-4" method="POST" action="functions/guardar.php" autocomplete="off">
+
         <div class="d-flex flex-wrap">
           <div class="col-md-4 my-2">
             <label for="nome" class="control-label"> NOME:</label>
@@ -126,7 +132,7 @@ echo $buffer;
         </div>
       </div>
     </div>
-     
+
 
 
     <!-- FORMACIÓN -->
@@ -260,6 +266,7 @@ echo $buffer;
           <button type="submit" class="btn btn-primary">GARDAR</button>
         </div>
       </div>
+      </form>
     </div><!-- end tab formacion -->
 
 
@@ -273,7 +280,7 @@ echo $buffer;
         </div>
 
     </div>
-   
+
     <!-- OFERTAS -->
     <div class="tab-pane fade py-3 px-4" id="ofertas" role="tabpanel" aria-labelledby="ofertas-tab">
       <div class="container section">
@@ -300,13 +307,14 @@ echo $buffer;
 
 
     </div>
+
   </div>
   </div>
 
 
 
 
-  <!-- Componente footer -->
+  <!-- COMPOÑENTE FOOTER -->
   <?php
   include_once '../inc/footer.php';
   ?>

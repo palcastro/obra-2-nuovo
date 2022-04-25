@@ -2,7 +2,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// Menú y script title que toma el header.
+//HEADER
 ob_start();
 include_once '../inc/header.php';
 
@@ -24,13 +24,15 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 <html>
 <body>
 
-  <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
-  <h2 class="text-center my-4 text-primary">Modificar datos da persoa</h2>
+  <!-- ESTRUTURA PARA TER VARIAS FICHAS DINÁMICAS NUNHA MESMA PÁXINA -->
+
 
   <!-- TABS CON BOOTSTRAP -->
-  <div class="container-fluid px-md-5 my-5">
+  <div class="container-fluid px-md-5 my-4">
+
+<h4 class="mb-4 text-primary text-center"><b>MODIFICAR DATOS DA PERSOA</b></h4>
     <!-- TABS -->
-    <!-- tabs menu -->
+    <!-- TABS MENÚ-->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item w-auto" role="presentation">
         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#datospersoais" type="button" role="tab" aria-controls="home" aria-selected="true">Datos persoais</button>
@@ -46,23 +48,23 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
       </li>
     </ul>
 
-    <!-- contidos tabs-->
+    <!-- CONTIDOS TABS-->
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade py-3 px-4 show active" id="datospersoais" role="tabpanel" aria-labelledby="datospersoais-tab">
-        <!-- Datos persoais -->
+        <!-- DATOS PERSOAIS -->
         <div class="container">
         <div class="d-flex flex-wrap">
           <div class="col-md-4 my-2">
             <label for="nome" class="control-label"> NOME:</label>
             <div class="col-md-10">
-              <input type="text" class="form-control" id="nombre" name="nome" placeholder="Nome" required>
+              <input type="text" class="form-control" id="nombre" name="nome" placeholder="Nome" value="<?php echo $row['nome']; ?>" required>
             </div>
           </div>
 
           <div class="col-md-4 my-2">
             <label for="primeiro_apelido" class=" control-label">PRIMEIRO APELIDO:</label>
             <div class="col-md-10">
-              <input type="text" class="form-control" id="nombre" name="primeiro_apelido" placeholder="Primeiro Apelido" required>
+              <input type="text" class="form-control" id="nombre" name="primeiro_apelido" placeholder="Primeiro Apelido" value="<?php echo $row['primeiro_apelido']; ?>" required>
             </div>
           </div>
 
@@ -71,21 +73,21 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
             <label for="segundo_apelido" class="control-label">SEGUNDO APELIDO:</label>
 
             <div class="col-md-10">
-              <input type="text" class="form-control" id="nombre" name="segundo_apelido" placeholder="Segundo Apelido" required>
+              <input type="text" class="form-control" id="nombre" name="segundo_apelido" placeholder="Segundo Apelido" value="<?php echo $row['segundo_apelido']; ?>" required>
             </div>
           </div>
 
           <div class="col-md-4 my-2">
             <label for="nif" class=" control-label">DNI / NIF:</label>
             <div class="col-md-10">
-              <input type="tel" class="form-control" id="nif" name="nif" placeholder="Número do DNI" pattern="[0-9]{8}+[A-Z]{1}" maxlength="9" required>
+              <input type="tel" class="form-control" id="nif" name="nif" placeholder="Número do DNI" pattern="[0-9]{8}+[A-Z]{1}" maxlength="9" value="<?php echo $row['nif']; ?>" required>
             </div>
           </div>
 
           <div class="col-md-4 my-2">
             <label for="data_nacemento" class="control-label">DATA DE NACEMENTO:</label>
             <div class="col-md-10">
-              <input type="date" class="form-control" id="data_nacemento" name="data_nacemento" placeholder="dd-mm-aa" required>
+              <input type="date" class="form-control" id="data_nacemento" name="data_nacemento" placeholder="dd-mm-aa" value="<?php echo $row['data_nacemento']; ?>" required>
             </div>
           </div>
 
@@ -106,14 +108,14 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           <div class="col-md-4 my-2">
             <label for="codigo_postal" class="control-label">CP:</label>
             <div class="col-md-10">
-              <input type="tel" class="form-control" id="codigo_postal" name="codigo_postal" placeholder="Código postal" maxlength="5" required>
+              <input type="tel" class="form-control" id="codigo_postal" name="codigo_postal" placeholder="Código postal" maxlength="5" value="<?php echo $row['codigo_postal']; ?>" required>
             </div>
           </div>
 
           <div class="col-md-4 my-2">
             <label for="telefono" class="control-label">TELÉFONO:</label>
             <div class="col-md-10">
-              <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" maxlength="9" required>
+              <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" maxlength="9" value="<?php echo $row['telefono']; ?>" required>
             </div>
           </div>
 
@@ -121,7 +123,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           <div class="col-md-4 my-2">
             <label for="email" class="control-label">CORREO ELECTRÓNICO:</label>
             <div class="col-md-10">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico"value="<?php echo $row['email']; ?>" >
             </div>
           </div>
         </div>
@@ -133,7 +135,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         </div>
       </div>
     </div>
-     
+
 
 
     <!-- FORMACIÓN -->
@@ -280,7 +282,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         </div>
 
     </div>
-   
+
     <!-- OFERTAS -->
     <div class="tab-pane fade py-3 px-4" id="ofertas" role="tabpanel" aria-labelledby="ofertas-tab">
       <div class="container section">
@@ -310,7 +312,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
   </div>
   </div>
 
-  <!--Footer-->
+  <!--COMPOÑENTE FOOTER-->
   <?php
   include_once '../inc/footer.php';
   ?>

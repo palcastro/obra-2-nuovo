@@ -12,7 +12,7 @@ ob_end_clean();
 $buffer = str_replace("%TITLE%", "Empresas", $buffer);
 echo $buffer;
 
-// METODO DE BÚSQUEDA ANTERIOR - APARTE PA QUE FUNCIONE
+// MÉTODO DE BÚSQUEDA ANTERIOR- PONSE APARTE PARA QUE FUNCIONE
 $where = "";
 
 if (!empty($_POST)) {
@@ -31,7 +31,7 @@ $consulta = $mysqli->query($sql);
 <html>
 <body>
 
-     <!-- Encabezado: título y cuadro búsqueda -->
+     <!-- ENCABEZADO:TÍTULO E CADRO DE BÚSQUEDA -->
     <div class="container mb-4">
         <nav class="navbar navbar-light my-4">
             <div class="container-fluid">
@@ -46,7 +46,7 @@ $consulta = $mysqli->query($sql);
                             </svg></a>
                         </a>
                     </div>
-                    <!-- Buscador y botón buscar -->
+                    <!-- BUSCADOR E BOTÓN DE BUSCAR -->
                     <div class="input-group mb-3 mx-2 w-6">
                         <input id="campo" name="campo" class="form-control" type="text" placeholder="Búsqueda" aria-label="Search">
                         <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-primary text-white rounded-0">
@@ -55,7 +55,7 @@ $consulta = $mysqli->query($sql);
             </div>
         </nav>
 
-        <!-- TABLA -->
+        <!-- TÁBOA -->
         <div class="row table-responsive">
             <table class="table table-hover">
                 <thead>
@@ -81,10 +81,10 @@ $consulta = $mysqli->query($sql);
                             <td><?php echo $row['data_incorporacion']; ?></td>
                             <td><?php echo $row['telefono']; ?></td>
                             <td><?php echo $row['fax']; ?></td>
-                            <!-- NO BORRAR TD'S SIGUIENTES -->
+                            <!-- NON BORRAR TD'S SEGUINTES -->
                             <!-- <td><?php echo $row['ofertas_contratacion']; ?></td> -->
                             <!-- <td><?php echo $row['ofertas_formacion']; ?></td> -->
-                            <!-- Botones acciones -->
+                            <!-- BOTÓNS ACCIÓNS -->
                             <td class="d-flex"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye " viewBox="0 0 16 16">
                                         <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                         <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -105,7 +105,7 @@ $consulta = $mysqli->query($sql);
         </div>
     </div>
 
-    <!-- Componente footer -->
+    <!-- COMPOÑENTE FOOTER -->
     <footer-component></footer-component>
 </body>
 

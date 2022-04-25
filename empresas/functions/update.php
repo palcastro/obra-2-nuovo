@@ -30,7 +30,7 @@ $resultado = $mysqli->query($sql);
   <title>Modificar rexistro</title>
   <link rel="stylesheet" href="../../assets/css/index.css">
 </head>
-<!-- Caja mensaje -->
+<!-- CAIXA MENSAXE -->
 
 <body>
     <div class="modal modal-sheet d-block bg-light d-flex align-items-center" tabindex="-1" role="dialog" id="modalSheet">

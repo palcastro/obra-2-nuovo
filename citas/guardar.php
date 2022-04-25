@@ -3,7 +3,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// Menú y script title que toma el header.
+//MENÚ E SCRIPT DO TÍTULO QUE TOMA DO HEADER
 ob_start();
 include_once '../inc/header.php';
 
@@ -36,7 +36,7 @@ $resultado = $mysqli->query($sql);
           <h3>ERRO AO GARDAR</h3>
         <?php } ?>
 
-        <a href="../index.php" class="btn btn-primary">VOLTAR</a>
+        <a href="../index.php" class="btn btn-primary">VOLVER</a>
 
       </div>
     </div>

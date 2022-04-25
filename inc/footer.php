@@ -1,3 +1,4 @@
+<!-- FOOTER XERAL -->
 <footer class="container-fluid py-3">
   <hr>
   <div class="row align-middle px-2">

@@ -2,7 +2,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// Menú y script title que toma el header.
+// MENÚ E SCRIPT QUE TOMA DO HEADER
 ob_start();
 include_once '../inc/header.php';
 
@@ -22,26 +22,45 @@ if (!empty($_POST)) {
 }
 $sql = "SELECT * FROM empresas $where";
 $resultado = $mysqli->query($sql);
+
+$total_pages = $mysqli->query('SELECT COUNT(*) FROM empresas')->fetch_row()[0];
+
+// Check if the page number is specified and check if it's a number, if not return the default page number which is 1.
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+
+// Number of results to show on each page.
+$num_results_on_page = 5;
+
+if ($stmt = $mysqli->prepare('SELECT * FROM empresas ORDER BY id LIMIT ?,?')) {
+  // Calculate the page to get the results we need from our table.
+  $calc_page = ($page - 1) * $num_results_on_page;
+  $stmt->bind_param('ii', $calc_page, $num_results_on_page);
+  $stmt->execute();
+  // Get the results...
+  $result = $stmt->get_result();
+  $stmt->close();
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 
-  <!--  Encabezado: título y cuadro búsqueda -->
+  <!--  ENCABEZADO: TÍTULO E CADRO DE BÚSQUEDA -->
   <div class="container mb-4">
     <nav class="navbar navbar-light my-4">
       <div class="container-fluid">
-        <h2 class="text-primary  w-25">Empresas</h2>
+      <h3 class="text-primary w-25"><b>EMPRESAS</b></h3>
+
 
         <form class="d-flex" action="./busqueda.php" method="POST">
-          <!-- Botón añadir nuevo -->
-          <div class="mr-4"> <a href="nuevo.php" class="btn btn-white mb-3" alt="Engadir nova empres">
+          <!-- BOTÓN ENGADIR NOVO -->
+          <div class="mr-4"> <a href="nuevo.php" class="btn btn-white mb-3" alt="Engadir nova empresa">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
               </svg></a>
           </div>
-          <!-- Buscador y botón buscar -->
+          <!-- BUSCADOR E BOTÓN BUSCAR -->
           <div class="input-group mb-3 mx-2 w-6" alt="Búsqueda de empresas">
             <input id="campo" name="campo" class="form-control" type="text" placeholder="Búsqueda" aria-label="Search">
             <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-primary text-white rounded-0">
@@ -50,7 +69,7 @@ $resultado = $mysqli->query($sql);
       </div>
     </nav>
 
-    <!-- TABLA -->
+    <!-- TÁBOA -->
     <div id="tabla" class="row table-responsive">
       <table class="table table-striped table-hover">
         <thead>
@@ -66,7 +85,8 @@ $resultado = $mysqli->query($sql);
         </thead>
 
         <tbody>
-          <?php while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+           <!--MÉTODO PARA NOVA PAXINACIÓN -->
+      <?php while ($row = $result->fetch_assoc()) : ?>
             <tr>
               <td><?php echo $row['nome']; ?></td>
               <td><?php echo $row['poboacion']; ?></td>
@@ -90,13 +110,44 @@ $resultado = $mysqli->query($sql);
                   </svg></a>
               </td>
             </tr>
-          <?php } ?>
+            <?php endwhile; ?>
         </tbody>
       </table>
     </div>
-  </div>
+<!-- FUNCIÓN DE PAXINACIÓN (SEN ESTILOS) -->
+<?php if (ceil($total_pages / $num_results_on_page) > 0) : ?>
+    <ul class="pagination">
+      <?php if ($page > 1) : ?>
+        <li class="prev"><a href="index.php?page=<?php echo $page - 1 ?>">Anterior</a></li>
+      <?php endif; ?>
 
-  <!-- Componente footer -->
+      <?php if ($page > 3) : ?>
+        <li class="start"><a href="index.php?page=1">1</a></li>
+        <li class="dots">...</li>
+      <?php endif; ?>
+
+      <?php if ($page - 2 > 0) : ?><li class="page"><a href="index.php?page=<?php echo $page - 2 ?>"><?php echo $page - 2 ?></a></li><?php endif; ?>
+      <?php if ($page - 1 > 0) : ?><li class="page"><a href="index.php?page=<?php echo $page - 1 ?>"><?php echo $page - 1 ?></a></li><?php endif; ?>
+
+      <li class="currentpage"><a href="index.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
+
+      <?php if ($page + 1 < ceil($total_pages / $num_results_on_page) + 1) : ?><li class="page"><a href="index.php?page=<?php echo $page + 1 ?>"><?php echo $page + 1 ?></a></li><?php endif; ?>
+      <?php if ($page + 2 < ceil($total_pages / $num_results_on_page) + 1) : ?><li class="page"><a href="index.php?page=<?php echo $page + 2 ?>"><?php echo $page + 2 ?></a></li><?php endif; ?>
+
+      <?php if ($page < ceil($total_pages / $num_results_on_page) - 2) : ?>
+        <li class="dots">...</li>
+        <li class="end"><a href="index.php?page=<?php echo ceil($total_pages / $num_results_on_page) ?>"><?php echo ceil($total_pages / $num_results_on_page) ?></a></li>
+      <?php endif; ?>
+
+      <?php if ($page < ceil($total_pages / $num_results_on_page)) : ?>
+        <li class="next"><a href="index.php?page=<?php echo $page + 1 ?>">Seguinte</a></li>
+      <?php endif; ?>
+    </ul>
+  <?php endif; ?>
+
+</div>
+
+  <!-- COMPOÑENTE FOOTER -->
   <?php
   include_once '../inc/footer.php';
   ?>

@@ -2,7 +2,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// Menú y script title que toma el header.
+//MENÚ SCRIPT-HEADER
 ob_start();
 include_once '../inc/header.php';
 
@@ -21,13 +21,14 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<main>
-  <!-- TABS CON BOOTSTRAP -->
-<div class="container-fluid px-md-5 my-5">
-<!-- TABS -->
-      <!-- tabs menu -->
+  <main>
+    <!-- TABS CON BOOTSTRAP -->
+    <div class="container-fluid px-md-5 my-5">
+      <!-- TABS -->
+      <!-- TABS MENÚ -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item w-auto" role="presentation">
           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#datosempresa" type="button" role="tab" aria-controls="home" aria-selected="true">Datos Empresa</button>
@@ -43,9 +44,10 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
         </li>
       </ul>
 
+      <!-- CONTIDOS TABS -->
       <div class="tab-content" id="myTabContent">
-<div class="tab-pane fade py-3 px-4 show active" id="datospersoais" role="tabpanel" aria-labelledby="datospersoais-tab">
-          <!-- Datos persoais -->
+        <div class="tab-pane fade py-3 px-4 show active" id="datosempresa" role="tabpanel" aria-labelledby="datosempresa-tab">
+          <!-- DATOS EMPRESA -->
           <div class="container">
             <div class="row align-items-start my-3">
               <div class="col p-2 me-lg-4 bd-highlight text-start">
@@ -67,46 +69,75 @@ $row = $ficha->fetch_array(MYSQLI_ASSOC);
             </div>
 
             <hr>
-            <!-- ***********************DATOS PERSOAIS************************  -->
+            <!-- PARTE INFERIOR- ACCIÓNS APARTADO  -->
             <div class="row align-items-start my-3">
               <p class="lead text-uppercase opacity-50">Accións</p>
               <div class="col">
                 <p class="text-nowrap"><span class="opacity-50">DATA INCORPORACIÓN:</span> <?php // echo $row['data_p_cita'];
-                                                                                              ?>
+                                                                                            ?>
                 <p class="text-nowrap"><span class="opacity-50">PERSOA DE CONTACTO:</span> <?php // echo $row['orientador_p_cita'];
-                                                                                      ?>
+                                                                                            ?>
                 <p class="text-nowrap"><span class="opacity-50">ORIENTADOR:</span> <?php // echo $row['orientador_p_cita'];
-                                                                                        ?>
+                                                                                    ?>
               </div>
               <div class="col">
                 <p class="text-nowrap"><span class="opacity-50">OFERTAS CONTRATACIÓN:</span> <?php // echo $row['orientador_p_cita'];
-                                                                                    ?>
-                <p class="text-nowrap"><span class="opacity-50">OFERTAS FORMACIÓN:</span> <?php // echo $row['orientador_p_cita'];
-                                                                                        ?>
-                <p class="text-nowrap"><span class="opacity-50">NOTAS E CONSIDERACIÓNS:</span> <?php // echo $row['orientador_p_cita'];
                                                                                               ?>
+                <p class="text-nowrap"><span class="opacity-50">OFERTAS FORMACIÓN:</span> <?php // echo $row['orientador_p_cita'];
+                                                                                          ?>
+
+                <p class="text-nowrap"><span class="opacity-50">NOTAS E CONSIDERACIÓNS:</span> <?php // echo $row['orientador_p_cita'];
+                                                                                                ?>
               </div>
             </div>
-            <!-- BOTÓN VOLVER -->
+            <div class="my-4">
+              <div class="col-sm-offset-2 col-sm-10">
+                <a href="index.php" class="btn btn-primary">VOLVER</a>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!--SEGUIMENTO -->
+        <div class="tab-pane fade py-3 px-4" id="seguimento" role="tabpanel" aria-labelledby="seguimento-tab">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eum rem dignissimos aut doloremque, quam molestias excepturi debitis blanditiis vel reiciendis qui quia et amet. Sunt corrupti officia ex est.
           <div class="my-4">
-          <div class="col-sm-offset-2 col-sm-10">
-            <a href="index.php" class="btn btn-primary">VOLVER</a>
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="index.php" class="btn btn-primary">VOLVER</a>
 
+            </div>
           </div>
         </div>
+
+        <!-- OFERTAS DE FORMACION-->
+        <div class="tab-pane fade py-3 px-4" id="ofertasdeformacion" role="tabpanel" aria-labelledby="ofertasdeformacion-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, debitis rerum quod eligendi minima impedit provident magnam distinctio omnis. Ullam ducimus nobis architecto dolorum officiis cupiditate veniam nihil molestiae iusto.
+          <div class="my-4">
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="index.php" class="btn btn-primary">VOLVER</a>
+
+            </div>
           </div>
-
+          <!-- OFERTAS DE CONTRATACIÓN-->
         </div>
+        <div class="tab-pane fade py-3 px-4" id="ofertasdecontratacion" role="tabpanel" aria-labelledby="ofertasdecontratacion-tab">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit provident accusamus ipsa nostrum molestias earum sunt itaque, quae placeat veritatis nihil dolorem doloribus eaque! Modi delectus et consectetur aliquam magni.
+          <div class="my-4">
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="index.php" class="btn btn-primary">VOLVER</a>
 
-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</div>
-<!-- contidos tabs -->
 
-
-</main>
-<!--Footer php-->
-<?php
+  </main>
+  <!--COMPOÑENTE FOOTER-->
+  <?php
   include_once '../inc/footer.php';
   ?>
 </body>

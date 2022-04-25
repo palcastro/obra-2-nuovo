@@ -1,4 +1,4 @@
-<!-- Footer del index sin zimbra -->
+<!-- FOOTER DO INDEX DE ZIMBRA -->
 
 <footer class="container-fluid py-3">
   <hr>

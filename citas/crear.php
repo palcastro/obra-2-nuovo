@@ -9,7 +9,7 @@ require '../conexion/sesion.php';
 
 <?php
 
-// Script title que toma el header.
+// TÍTULO SCRIPT QUE TOMA DE HEADER
 ob_start();
 include_once '../inc/header.php';
 
@@ -54,7 +54,7 @@ echo $buffer;
     <br>
     <div class="form-group">
       <div style="margin-left:4%" class="col-sm-10">
-        <a href="./index.php" class="btn btn-default">Voltar</a>
+        <a href="./index.php" class="btn btn-default">Volver</a>
         <button type="submit" class="btn btn-primary">Gardar</button>
       </div>
     </div>

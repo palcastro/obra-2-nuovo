@@ -12,14 +12,14 @@ ob_end_clean();
 $buffer = str_replace("%TITLE%", "Persoas", $buffer);
 echo $buffer;
 
-// MISMO METODO DE BÚSQUEDA - FALTA EL ORDEN DE LOS NÚMEROS
+// MESMO MÉTODO DE BÚSQUEDA -FALTA DE ORDE NOS NÚMEROS
 $where = "";
 
 if (!empty($_POST)) {
   $valor = $_POST['campo'];
   if (!empty($valor)) {
-    // $where = "WHERE nif LIKE '%" . $valor . "%'"; // busca cualquier orden
-    // $where = "WHERE nif LIKE '%$valor'"; // solo busca exactos
+    // $where = "WHERE nif LIKE '%" . $valor . "%'"; // BUSCA CALQUERA ORDEN
+    // $where = "WHERE nif LIKE '%$valor'"; // SÓ BUSCA EXACTOS
     $where = "WHERE nif LIKE '$valor%' OR nome LIKE '$valor%' OR primeiro_apelido LIKE '$valor%'"; // buca el comienzo
   }
 }
@@ -32,14 +32,14 @@ $consulta = $mysqli->query($sql);
 <html>
 <body>
 
-<!-- Encabezado: título y cuadro búsqueda -->
+<!-- ENCABEZADO: TÍTULO E CADRO DE BÚSQUEDA -->
 <div class="container mb-4">
   <nav class="navbar navbar-light my-4">
     <div class="container-fluid">
       <h2 class="text-primary  w-25">Persoas</h2>
 
       <form class="d-flex" action="./busqueda.php" method="POST">
-        <!-- Botón añadir nuevo -->
+        <!-- BOTÓN ENGADOR NOVO -->
         <div class="mr-4"> <a href="functions/nuevo.php" class="btn btn-white mb-3 rounded-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
               <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
@@ -49,7 +49,7 @@ $consulta = $mysqli->query($sql);
           </a>
         </div>
 
-        <!-- Buscador y botón buscar -->
+        <!-- BUSCADOR E BOTÓN DE BUSCAR -->
         <div class="input-group mb-3 mx-2 w-6">
           <input id="campo" name="campo" class="form-control" type="text" placeholder="Búsqueda" aria-label="Search">
           <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-primary text-white rounded-0">
@@ -58,7 +58,7 @@ $consulta = $mysqli->query($sql);
     </div>
   </nav>
 
-  <!-- TABLA -->
+  <!-- TÁBOA -->
   <div class="row table-responsive">
     <table class="table table-hover">
       <thead>
@@ -89,7 +89,7 @@ $consulta = $mysqli->query($sql);
           <td><?php echo $row['codigo_postal']; ?></td>
           <td><?php echo $row['telefono']; ?></td>
           <td><?php echo $row['email']; ?></td>
-          <!-- Botones acciones -->
+          <!-- BOTÓNS ACCIÓNS -->
           <td class="d-flex"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye " viewBox="0 0 16 16">
                 <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                 <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -110,7 +110,7 @@ $consulta = $mysqli->query($sql);
 
 </div>
 
-<!-- Footer -->
+<!-- COMPOÑENTE FOOTER -->
 <?php
 include_once '../inc/footer.php';
 ?>

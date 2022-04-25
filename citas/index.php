@@ -2,7 +2,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// Menú y script title que toma el header.
+// MENÚ E ESCRIPT QUE TOMA DO HEADER
 ob_start();
 include_once '../inc/header.php';
 
@@ -16,12 +16,12 @@ echo $buffer;
 <!DOCTYPE html>
 <html>
 <body>
-  <!--Main-->
+  <!--MENÚ-MAIN-->
 
   <div class="master-container my-4">
 
-    <div class="container">
-      <h2 class="text-primary w-25 mb-5">Axenda</h2>
+  <div class="container">
+    <h3 class="text-primary w-25 p-2 mb-4 "><b>AXENDA</b></h3>
       <div class="table-responsive d-flex justify-content-center">
         <?php
         $sql = "SELECT * FROM citas";
@@ -47,7 +47,7 @@ echo $buffer;
     </div>
 
   </div>
-  <!--Footer -->
+  <!--COMPOÑENTE FOOTER -->
   <?php
   include_once '../inc/footer.php';
   ?>

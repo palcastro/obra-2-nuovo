@@ -11,19 +11,10 @@
 </head>
 
 <body>
+  <!-- HEADER -->
 <?php
 include_once '../inc/header-out.php';?>
 
-
-<!--<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
-
-        <div class="collapse navbar-collapse justify-content-md-center" id="navlogin">
-            <h1 id="solh1" class="text-white">Servizo de Orientación Laboral</h1>
-        </div>
-    </nav>
-</header>-->
 
 <main>
     <!-- LOGIN -->
@@ -100,7 +91,7 @@ if ($_POST) {
     }
 }
 
-//Footer
+// COMPOÑENTE FOOTER
 include_once '../inc/footer.php';
 ?>
 
