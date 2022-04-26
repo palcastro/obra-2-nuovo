@@ -1,3 +1,7 @@
+<!-- NOTA: NON BORRAMOS O DE CREAR EN CASO DE NECESITAR A INFORMACIÓN QUE VEN
+PARA QUE SE PODAN ENVIAR OS DATOS NO FUTURO A BBDD -->
+
+
 <?php
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';

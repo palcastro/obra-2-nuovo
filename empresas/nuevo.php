@@ -276,7 +276,7 @@ echo $buffer;
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Pechar</button>
+                  <button type="button" class="btn " data-bs-dismiss="modal">Pechar</button>
                   <button type="button" class="btn btn-primary">Gardar</button>
                 </div>
               </div>
